@@ -29,7 +29,7 @@ namespace QuestingEngine.Services
             decimal percentCompleted = (playerState.Points / _questConfig.TotalQuestPoints) * 100;
 
             List<MilestoneCompleted> milestonesCompleted = new();
-            foreach (var milestone in _questConfig.Milestones.Where(m => m.MilestoneIndex >= playerState.LastMilestoneCompleted && playerState.Points >= m.RequiredPoints))
+            foreach (var milestone in _questConfig.Milestones.Where(m => playerState.Points >= m.RequiredPoints))
             {
                 milestonesCompleted.Add(new MilestoneCompleted { MilestoneIndex = milestone.MilestoneIndex, ChipsAwarded = milestone.ChipsAwarded });
                 playerState.LastMilestoneCompleted = milestone.MilestoneIndex;

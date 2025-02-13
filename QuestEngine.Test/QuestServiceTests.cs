@@ -1,11 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Moq;
-using QuestingEngine.Data;
 using QuestingEngine.Models;
 using QuestingEngine.Repositories;
 using QuestingEngine.Services;
-using System.Collections.Generic;
 
 namespace QuestEngine.Test
 {
