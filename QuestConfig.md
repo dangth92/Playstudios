@@ -1,3 +1,4 @@
+﻿@@ -1,67 +0,0 @@
 ﻿# **Quest Configuration Documentation**
 
 ## **Overview**
@@ -49,7 +50,7 @@ A list of milestones that define thresholds for rewards.
 ## 📂 Configuration File Location
 
 The quest configuration is stored in:  
-**[`Config/questConfig.json`](../Config/questConfig.json)**
+**[`Config/questConfig.json`](../QuestingEngine/Config/questConfig.json)**
 
 ## 📄 Example `questConfig.json`
 
