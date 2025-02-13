@@ -1,4 +1,4 @@
-﻿@@ -1,67 +0,0 @@
+@@ -1,67 +0,0 @@
 ﻿# **Quest Configuration Documentation**
 
 ## **Overview**

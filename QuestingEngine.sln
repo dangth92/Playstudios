@@ -9,11 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestEngine.Test", "QuestEn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestingEngine.IntegrationTests", "QuestingEngine.IntegrationTests\QuestingEngine.IntegrationTests.csproj", "{9730E623-DE3B-4864-9296-F4010C0AEA0A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{CB1D3FAB-0E35-455A-9157-2EFB815E4477}"
-	ProjectSection(SolutionItems) = preProject
-		QuestConfig.md = QuestConfig.md
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
