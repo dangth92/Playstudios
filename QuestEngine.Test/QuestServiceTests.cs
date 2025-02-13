@@ -57,7 +57,7 @@ namespace QuestEngine.Test
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(60, result.QuestPointsEarned); // (100 * 0.1) + (10 * 5) = 60
+            Assert.AreEqual(60, result.QuestPointsEarned); // accumulated points + total previous points = ((100 * 0.1) + (10 * 5)) + 0 = 60
             Assert.AreEqual(6, result.TotalQuestPercentCompleted); // (60 / 1000) * 100 = 6%
             _mockRepository.Verify(r => r.UpdatePlayerQuestStateAsync(It.IsAny<PlayerQuestState>()), Times.Once);
         }
@@ -77,7 +77,7 @@ namespace QuestEngine.Test
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(60, result.QuestPointsEarned);
+            Assert.AreEqual(300, result.QuestPointsEarned); // accumulated points + total previous points = ((100 * 0.1) + (10 * 5)) + 240 = 300
             Assert.AreEqual(300, existingState.Points); // Previous 240 + 60 = 300
             Assert.AreEqual(1, result.MilestonesCompleted.Count); // Passed first milestone
             Assert.AreEqual(1, result.MilestonesCompleted[0].MilestoneIndex);

@@ -63,7 +63,7 @@ namespace QuestingEngine.IntegrationTests
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(35, result.QuestPointsEarned); // (100 * 0.1) + (5 * 5) = 35
+            Assert.AreEqual(535, result.QuestPointsEarned); //  accumulated points + total previous points = (100 * 0.1) + (5 * 5) + 500 = 535
             Assert.AreEqual((decimal)53.5, result.TotalQuestPercentCompleted); // (35 + 500) / 1000 * 100 = 53.5
             Assert.AreEqual(2, result.MilestonesCompleted.Count); // (35 + 500) = 535, 500 < 750 (milestone 3) => passed 2 milestones
             Assert.AreEqual(2, result.MilestonesCompleted?.LastOrDefault()?.MilestoneIndex); // (35 + 500) = 535, 500 < 535 < 750 => last milestone = 2

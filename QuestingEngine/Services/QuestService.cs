@@ -24,8 +24,8 @@ namespace QuestingEngine.Services
             var playerState = await _questRepository.GetPlayerQuestStateAsync(request.PlayerId)
                              ?? new PlayerQuestState { PlayerId = request.PlayerId, Points = 0, LastMilestoneCompleted = 0 };
 
-            decimal pointsEarned = (request.ChipAmountBet * _questConfig.RateFromBet) + (request.PlayerLevel * _questConfig.LevelBonusRate);
-            playerState.Points += (int)pointsEarned;
+            decimal accumulatedPoints = (request.ChipAmountBet * _questConfig.RateFromBet) + (request.PlayerLevel * _questConfig.LevelBonusRate); // earned points
+            playerState.Points += (int)accumulatedPoints;
             decimal percentCompleted = (playerState.Points / _questConfig.TotalQuestPoints) * 100;
 
             List<MilestoneCompleted> milestonesCompleted = new();
@@ -39,7 +39,7 @@ namespace QuestingEngine.Services
 
             _logger.LogInformation($"Quest progress updated for PlayerId: {request.PlayerId}, Points: {playerState.Points}");
 
-            return new QuestProgressResponse { QuestPointsEarned = pointsEarned, TotalQuestPercentCompleted = percentCompleted, MilestonesCompleted = milestonesCompleted };
+            return new QuestProgressResponse { QuestPointsEarned = playerState.Points, TotalQuestPercentCompleted = percentCompleted, MilestonesCompleted = milestonesCompleted };
         }
 
         public async Task<QuestStateResponse> GetQuestStateAsync(string playerId)
