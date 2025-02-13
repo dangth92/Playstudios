@@ -1,0 +1,6 @@
+@QuestingEngine_HostAddress = http://localhost:5239
+
+GET {{QuestingEngine_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

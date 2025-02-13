@@ -1,0 +1,27 @@
+﻿{
+  "TotalQuestPoints": 1000, // total quest points required
+  "RateFromBet": 0.1,
+  "LevelBonusRate": 5,
+  "Milestones": [
+    {
+      "MilestoneIndex": 1,
+      "RequiredPoints": 250,
+      "ChipsAwarded": 50
+    },
+    {
+      "MilestoneIndex": 2,
+      "RequiredPoints": 500,
+      "ChipsAwarded": 100
+    },
+    {
+      "MilestoneIndex": 3,
+      "RequiredPoints": 750,
+      "ChipsAwarded": 200
+    },
+    {
+      "MilestoneIndex": 4,
+      "RequiredPoints": 1000,
+      "ChipsAwarded": 500
+    }
+  ]
+}
