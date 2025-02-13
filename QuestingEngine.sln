@@ -5,9 +5,14 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuestingEngine", "QuestingEngine\QuestingEngine.csproj", "{6C715ED7-9863-46E5-84A8-44F15CDC5E3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestEngine.Test", "QuestEngine.Test\QuestEngine.Test.csproj", "{EE0C0C08-6F6F-49E6-9002-568A151712B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuestEngine.Test", "QuestEngine.Test\QuestEngine.Test.csproj", "{EE0C0C08-6F6F-49E6-9002-568A151712B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestingEngine.IntegrationTests", "QuestingEngine.IntegrationTests\QuestingEngine.IntegrationTests.csproj", "{9730E623-DE3B-4864-9296-F4010C0AEA0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuestingEngine.IntegrationTests", "QuestingEngine.IntegrationTests\QuestingEngine.IntegrationTests.csproj", "{9730E623-DE3B-4864-9296-F4010C0AEA0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagrams", "Diagrams", "{49FAF572-3DA3-454F-A094-0F0ADDB8E609}"
+	ProjectSection(SolutionItems) = preProject
+		quest_sequence.puml = quest_sequence.puml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
