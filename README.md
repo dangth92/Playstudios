@@ -43,11 +43,14 @@ dotnet run --project src/QuestEngine
 
 ## 🛠️ Configuration
 Edit questConfig.json to adjust quest settings.  
-For detailed quest configuration, see [`QuestConfig.md`](Docs/QuestConfig.md)
+For detailed quest configuration, see [`Docs/QuestConfig.md`](Docs/QuestConfig.md)
 
 ## Sequence Diagram
 The sequence diagram illustrating the quest process can be found here:  
 [`Quest Sequence Diagram`](Docs/Quest_Sequence_Diagram.png)
+
+## Schema
+See the full schema documentation: [`Docs/Schema.md`](Docs/Schema.md)
 
 ---
 

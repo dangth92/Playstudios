@@ -4,8 +4,9 @@ namespace QuestingEngine.Models
 {
     public class PlayerQuestState
     {
-        [Key] // PlayerId is the Primary Key
-        public string PlayerId { get; set; }
+        [Key]
+        [MaxLength(50)]
+        public string PlayerId { get; set; } = string.Empty;
 
         public decimal Points { get; set; }
         public int LastMilestoneCompleted { get; set; }
