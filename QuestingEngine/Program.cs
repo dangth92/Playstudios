@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using QuestingEngine.Data;
+using QuestingEngine.Models;
 using QuestingEngine.Repositories;
 using QuestingEngine.Services;
 using System;
@@ -15,6 +16,9 @@ namespace QuestingEngine
 
             // Add services to the container.
 
+            // Register QuestConfigService for dependency injection
+            builder.Services.AddSingleton<IQuestConfigService, QuestConfigService>();
+
             // Register db context
             builder.Services.AddDbContext<QuestDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -26,6 +30,9 @@ namespace QuestingEngine
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            // Enable Logging
+            builder.Services.AddLogging();
 
             var app = builder.Build();
 

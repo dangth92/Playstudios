@@ -7,22 +7,20 @@ namespace QuestingEngine.Services
     public class QuestService : IQuestService
     {
         private readonly IQuestRepository _questRepository;
+        private readonly ILogger<QuestService> _logger;
         private readonly QuestConfig _questConfig;
 
-        public QuestService(IQuestRepository questRepository)
+        public QuestService(IQuestRepository questRepository, ILogger<QuestService> logger, IQuestConfigService questConfigService)
         {
             _questRepository = questRepository;
-            _questConfig = LoadConfig();
-        }
-
-        private QuestConfig LoadConfig()
-        {
-            var configText = File.ReadAllText("Config//questConfig.json");
-            return JsonConvert.DeserializeObject<QuestConfig>(configText);
+            _logger = logger;
+            _questConfig = questConfigService.GetConfig() ?? throw new ArgumentNullException(nameof(questConfigService));
         }
 
         public async Task<QuestProgressResponse> ProgressQuestAsync(QuestProgressRequest request)
         {
+            _logger.LogInformation($"Processing quest progress for PlayerId: {request.PlayerId}");
+
             var playerState = await _questRepository.GetPlayerQuestStateAsync(request.PlayerId)
                              ?? new PlayerQuestState { PlayerId = request.PlayerId, Points = 0, LastMilestoneCompleted = 0 };
 
@@ -38,6 +36,8 @@ namespace QuestingEngine.Services
             }
 
             await _questRepository.UpdatePlayerQuestStateAsync(playerState);
+
+            _logger.LogInformation($"Quest progress updated for PlayerId: {request.PlayerId}, Points: {playerState.Points}");
 
             return new QuestProgressResponse { QuestPointsEarned = pointsEarned, TotalQuestPercentCompleted = percentCompleted, MilestonesCompleted = milestonesCompleted };
         }
