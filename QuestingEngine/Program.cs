@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using QuestingEngine.Data;
+using QuestingEngine.Middlewares;
 using QuestingEngine.Models;
 using QuestingEngine.Repositories;
 using QuestingEngine.Services;
@@ -50,6 +51,7 @@ namespace QuestingEngine
                 app.UseSwaggerUI();
             }
 
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();
